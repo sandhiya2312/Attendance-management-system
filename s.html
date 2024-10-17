@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #8f8de0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      html,
+      body {
+        height: 140%;
+      }
+      .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 30px;
+        padding: 10px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        width: 70%;
+        height: 480px;
+        background: #12c2e9; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #f64f59,
+          #c471ed,
+          #12c2e9
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f64f59,
+          #c471ed,
+          #12c2e9
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      .left-container {
+        background: #000000;
+        background: -webkit-linear-gradient(to right, #434343, #000000);
+        background: linear-gradient(to right, #434343, #000000);
+        flex: 1;
+        max-width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 430px;
+        padding: 10px;
+        margin: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .right-container {
+        background: #000000;
+        background: -webkit-linear-gradient(to left, #434343, #000000);
+        background: linear-gradient(to left, #434343, #000000);
+        flex: 1;
+        max-width: 70%;
+        height: 430px;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      @media only screen and (max-width: 860px) {
+        .card {
+          flex-direction: column;
+          margin: 10px;
+          height: auto;
+          width: 90%;
+        }
+        .left-container {
+          flex: 1;
+          max-width: 100%;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .card {
+          flex-direction: column;
+          margin: 10px;
+        }
+        .left-container {
+          flex: 1;
+          max-width: 100%;
+        }
+      }
+      img {
+        width: 200px;
+        height: 200px;
+        max-width: 200px;
+        border-radius: 50%;
+        margin: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+      h3 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+      .gradienttext {
+        background-image: linear-gradient(to right, #ee00ff 0%, #fbff00 100%);
+        color: transparent;
+        -webkit-background-clip: text;
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: aliceblue;
+      }
+
+      table {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 280px;
+        border-collapse: collapse;
+      }
+
+      td {
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        color: white;
+      }
+
+      td:first-child {
+        font-weight: bold;
+      }
+      .credit a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 800;
+      }
+
+      .credit {
+        color: #fff;
+        text-align: center;
+        margin-top: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .ed {
+        padding: 45%;
+        color: #f40ae0;
+        text-align: center;
+        margin-top: 10px;
+        align-items: center;
+        font-size: 20px;
+      }
+      form h1 {
+        padding-top: 5%;
+        padding-left: 40%;
+        text-transform: capitalize;
+        font-size: 30px;
+        color: violet;
+      }
+      .container {
+        background-color: #796b6b;
+        border-radius: 30px;
+        border: 5px solid orangered;
+        box-shadow: 0 5px 15px rgba(190, 37, 37, 0.35);
+        position: relative;
+        overflow: hidden;
+        width: 1000px;
+        max-width: 100%;
+        min-height: 400px;
+      }
+      .container form {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        height: 100%;
+      }
+      .container textarea {
+        background-color: #eee;
+        border: 2px solid aqua;
+        margin: 0px 10px;
+        padding: 10px 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        width: 100%;
+        outline: indigo;
+      }
+      .container input {
+        background-color: #eee;
+        border: 2px solid aqua;
+        margin: 0px 10px;
+        padding: 10px 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        width: 100%;
+        outline: indigo;
+      }
+      .sign-in {
+        font-size: 15px;
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        border: 2px solid black;
+        left: 0;
+        width: 45%;
+        height: 35px;
+        z-index: 2;
+      }
+      .container .sign-in {
+        transform: translateX(70%);
+      }
+      .pa {
+        color: black;
+        font-size: 20px;
+      }
+      textarea,
+      input:hover {
+        background-color: rgb(246, 238, 247);
+      }
+      a {
+        color: white;
+      }
+      a:hover {
+        color: aqua;
+      }
+      .edi {
+        color: white;
+      }
+      .edi:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="left-container">
+        <img
+          src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358__480.jpg"
+          alt="Profile Image"
+        />
+        <h2 class="gradienttext">Joe</h2>
+        <p>Manager</p>
+      </div>
+      <div class="right-container">
+        <h3 class="gradienttext">Profile Details</h3>
+        <table>
+          <tr>
+            <td>Name :</td>
+            <td id="name">Joe</td>
+          </tr>
+          <tr>
+            <td>DOB:</td>
+            <td id="dob">15/07/1986</td>
+          </tr>
+          <tr>
+            <td>Mobile :</td>
+            <td id="mobile">+91 9793847263</td>
+          </tr>
+          <tr>
+            <td>Email :</td>
+            <td id="email">joe@gmail.com</td>
+          </tr>
+          <tr>
+            <td>Address :</td>
+            <td id="address">123 Main St, Anytown, USA</td>
+          </tr>
+        </table>
+        <div class="credit">
+          Made with <span style="color: tomato; font-size: 20px">❤ </span>
+        </div>
+        <p></p>
+        <div><a class="ed" href="#edit">Edit</a></div>
+      </div>
+    </div>
+    <br />
+    <h1 id="edit" class="edi">Edit Here</h1>
+
+    <div class="container">
+      <form>
+        <section>
+          <p class="pa">
+            Name:
+            <input
+              type="text"
+              name="name1"
+              placeholder="Enter Name"
+              onKeyUp="updatename('name')"
+            />
+          </p>
+          <p class="pa">
+            Date Of Birth:
+            <input
+              type="text"
+              name="dob1"
+              placeholder="12/04/1986"
+              onKeyUp="updatedob('dob')"
+            />
+          </p>
+          <p class="pa">
+            E-mail :
+            <input
+              type=" email"
+              name="email1"
+              placeholder="Enter Email"
+              onKeyUp="updateemail('email')"
+            />
+          </p>
+          <p class="pa">
+            Password:<input
+              type="password"
+              name="password1"
+              placeholder="Change Password"
+              required
+              on\KeyUp="updatepassword('password')"
+            />
+          </p>
+          <p class="pa">
+            Address :<textarea
+              type="message"
+              rows="6"
+              required
+              onKeyUp="updatetextarea('address')"
+            ></textarea>
+          </p>
+          <p class="pa">
+            Phone No:<input
+              type="text"
+              placeholder="99-999-99-999"
+              required
+              onKeyUp="updatephone('mobile')"
+            />
+          </p>
+        </section>
+      </form>
+    </div>
+    <script>
+      function updatename(element) {
+        document.getElementById(element).value =
+          document.getElementById("name1").value;
+      }
+    </script>
+  </body>
+</html>
