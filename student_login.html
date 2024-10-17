@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    
+</head>
+<body><style>
+    body
+{
+    margin: 0;
+    padding: 0;
+    background-image: "C:/Users/ASUS/Downloads/school14.jpeg";
+    font-family: 'Arial';
+    font-family: Arial, sans-serif;
+        padding: 20px;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+.back{
+            position:absolute;
+            background-image: url('C:/Users/ASUS/Downloads/SCHOOL15.jpg');
+            bottom:0;
+            right:0%;
+            top:0;
+            left:0;
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+            background-position: center;
+            z-index: -1;
+          
+          }
+
+.login{
+        width: 382px;
+        overflow: hidden;
+        margin: auto;
+        margin: 20 0 0 450px;
+        padding: 80px;
+        background:#23463f;
+        border-radius: 15px ;
+
+}
+h2{
+    text-align: center;
+    color: #277582;
+    padding: 20px;
+}
+label{
+    color: #08ffd1;
+    font-size: 17px;
+}
+#Uname{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#Pass{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+
+}
+#log{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: blue;
+
+
+}
+span{
+    color: white;
+    font-size: 17px;
+}
+a{
+    float: right;
+    background-color: grey;
+}
+
+body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      
+        
+form h1 {
+        padding-top: 5%;
+        padding-left: 40%;
+        text-transform: capitalize;
+        font-size: 30px;
+        color: violet;
+      }
+      .container {
+        background-color: #796b6b;
+        border-radius: 30px;
+        border: 5px solid orangered;
+        box-shadow: 0 5px 15px rgba(190, 37, 37, 0.35);
+        position: relative;
+        overflow: hidden;
+        width: 1000px;
+        max-width: 100%;
+        min-height: 400px;
+      }
+     
+      .container form {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        height: 100%;
+      }
+      .container textarea {
+        background-color: #eee;
+        border: 2px solid aqua;
+        margin: 0px 10px;
+        padding: 10px 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        width: 100%;
+        outline: indigo;
+      }
+      .container input {
+        background-color: #eee;
+        border: 2px solid aqua;
+        margin: 0px 10px;
+        padding: 10px 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        width: 100%;
+        outline: indigo;
+      }
+      .g{
+        background-color: #fff;
+        border-radius: 10%;
+      }
+      .sign-in {
+        font-size: 15px;
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        border: 2px solid black;
+        left: 0;
+        width: 45%;
+        height: 35px;
+        z-index: 2;
+      }
+      .container .sign-in {
+        transform: translateX(70%);
+      }
+      .pa {
+        color: black;
+        font-size: 20px;
+      }
+      textarea,
+      input:hover {
+        background-color: rgb(246, 238, 247);
+      }
+    
+      a:hover {
+        color:black;
+      }
+      .edi:hover {
+        color: red;
+      }
+     
+</style>
+<div class="back"></div>
+ <div class="g">  <h2 style="color:#13fcd1;">STAFF LOGIN</h2></div><br> 
+    <div class="login">
+        <form id="login" method="get" action="login.php">
+        <label><b>User Name
+        </b>
+        </label>
+        <input type="text" name="Uname" id="Uname" placeholder="Username">
+        <br><br>
+        <label><b>Password
+        </b>
+        </label>
+        <input type="Password" name="Pass" id="Pass" placeholder="Password">
+        <br><br>
+        <input type="submit" value="Login">
+        <br><br>
+        <input type="checkbox" id="check">
+        <span>Remember me</span>
+        <br><br>
+        Do you have an account?<div><a class="ed" href="#SignIn" style="background-color: #eee;">SignUp</a></div><h1 id="SignIn" class="edi">Sign In Here</h1>
+
+    </form>
+</div>
+<br><br><br>
+<h1 id="SignIn" >SignUp</h1>
+<div class="container">
+  <form>
+    <section>
+      <p class="pa">
+        UserName:
+        <input
+          type="text"
+          name="name1"
+          placeholder="Enter Name"
+          onKeyUp="updatename('name')"
+        />
+      </p>
+      
+      <p class="pa">
+        E-mail :
+        <input
+          type=" email"
+          name="email1"
+          placeholder="Enter Email"
+          onKeyUp="updateemail('email')"
+        />
+      </p>
+      <p class="pa">
+        Password:<input
+          type="password"
+          name="password1"
+          placeholder="Change Password"
+          required
+          on\KeyUp="updatepassword('password')"
+        />
+      </p>
+      
+      <p class="pa">
+        Phone No:<input
+          type="text"
+          placeholder="99-999-99-999"
+          required
+          onKeyUp="updatephone('mobile')"
+        />
+      </p>
+    </section>
+    
+  </form>
+  
+</div>
+<a href="student_login.html"><button>Signin</button></a>
+</body>
+</html>
